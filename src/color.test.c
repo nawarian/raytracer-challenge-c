@@ -62,5 +62,7 @@ int main(void)
     test_subtracting_colors();
     test_multiplying_color_by_scalar();
     test_multiplying_colors();
+
+    return 0;
 }
 
