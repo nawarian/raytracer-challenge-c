@@ -164,6 +164,32 @@ void test_negating_tuple(void)
     assert(tuple_equals(tuple_negate(a), tuple(-1, 2, -3, 4)));
 }
 
+/**
+ * Scenario: Multiplying a tuple by a scalar
+ *
+ * Given a ← tuple(1, -2, 3, -4)
+ * Then a * 3.5 = tuple(3.5, -7, 10.5, -14)
+ */
+void test_multiplying_tuple_by_scalar(void)
+{
+    tuple_t a = tuple(1, -2, 3, -4);
+
+    assert(tuple_equals(tuple_mul(a, 3.5), tuple(3.5, -7, 10.5, -14)));
+}
+
+/**
+ * Scenario: Multiplying a tuple by a fraction
+ *
+ * Given a ← tuple(1, -2, 3, -4)
+ * Then a * 0.5 = tuple(0.5, -1, 1.5, -2)
+ */
+void test_multiplying_tuple_by_fraction(void)
+{
+    tuple_t a = tuple(1, -2, 3, -4);
+
+    assert(tuple_equals(tuple_mul(a, 0.5), tuple(0.5, -1, 1.5, -2)));
+}
+
 int main(void)
 {
     test_tuple_with_w_1_is_a_point();
@@ -176,5 +202,7 @@ int main(void)
     test_subtracting_two_vectors();
     test_subtracting_vector_from_zero_vector();
     test_negating_tuple();
+    test_multiplying_tuple_by_scalar();
+    test_multiplying_tuple_by_fraction();
 }
 
