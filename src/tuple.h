@@ -20,6 +20,8 @@ tuple_t tuple_mul(tuple_t tuple, float multiplier);
 tuple_t tuple_div(tuple_t tuple, float factor);
 tuple_t tuple_negate(tuple_t tuple);
 
+float vector_magnitude(tuple_t vector);
+
 bool tuple_equals(tuple_t a, tuple_t b);
 bool is_point(tuple_t tuple);
 bool is_vector(tuple_t tuple);

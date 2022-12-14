@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include <math.h>
 #include "tuple.h"
 #include "utils.h"
 
@@ -73,6 +74,16 @@ tuple_t tuple_negate(tuple_t tuple)
         -tuple.z,
         -tuple.w
     };
+}
+
+float vector_magnitude(tuple_t vector)
+{
+    return sqrt(
+        powf(vector.x, 2)
+        + powf(vector.y, 2)
+        + powf(vector.z, 2)
+        + powf(vector.w, 2)
+    );
 }
 
 bool is_point(tuple_t tuple)

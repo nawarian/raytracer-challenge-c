@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <stdbool.h>
+#include <math.h>
 
 #include "tuple.h"
 #include "utils.h"
@@ -203,6 +204,71 @@ void test_dividing_tuple_by_scalar(void)
     assert(tuple_equals(tuple_div(a, 2), tuple(0.5, -1, 1.5, -2)));
 }
 
+/**
+ * Scenario: Computing the magnitude of vector(1, 0, 0)
+ *
+ * Given v ← vector(1, 0, 0)
+ * Then magnitude(v) = 1
+ */
+void test_computing_magnitude_vector_1_0_0(void)
+{
+    tuple_t v = vector(1, 0, 0);
+
+    assert(fequal(vector_magnitude(v), 1));
+}
+
+/**
+ * Scenario: Computing the magnitude of vector(0, 1, 0)
+ *
+ * Given v ← vector(0, 1, 0)
+ * Then magnitude(v) = 1
+ */
+void test_computing_magnitude_vector_0_1_0(void)
+{
+    tuple_t v = vector(0, 1, 0);
+
+    assert(fequal(vector_magnitude(v), 1));
+}
+
+/**
+ * Scenario: Computing the magnitude of vector(0, 0, 1)
+ *
+ * Given v ← vector(0, 0, 1)
+ * Then magnitude(v) = 1
+ */
+void test_computing_magnitude_vector_0_0_1(void)
+{
+    tuple_t v = vector(0, 0, 1);
+
+    assert(fequal(vector_magnitude(v), 1));
+}
+
+/**
+ * Scenario: Computing the magnitude of vector(1, 2, 3)
+ *
+ * Given v ← vector(1, 2, 3)
+ * Then magnitude(v) = √14
+ */
+void test_computing_magnitude_vector_1_2_3(void)
+{
+    tuple_t v = vector(1, 2, 3);
+
+    assert(fequal(vector_magnitude(v), sqrt(14)));
+}
+
+/**
+ * Scenario: Computing the magnitude of vector(-1, -2, -3)
+ *
+ * Given v ← vector(-1, -2, -3)
+ * Then magnitude(v) = √14
+ */
+void test_computing_magnitude_vector_n1_n2_n3(void)
+{
+    tuple_t v = vector(-1, -2, -3);
+
+    assert(fequal(vector_magnitude(v), sqrt(14)));
+}
+
 int main(void)
 {
     test_tuple_with_w_1_is_a_point();
@@ -218,5 +284,10 @@ int main(void)
     test_multiplying_tuple_by_scalar();
     test_multiplying_tuple_by_fraction();
     test_dividing_tuple_by_scalar();
+    test_computing_magnitude_vector_1_0_0();
+    test_computing_magnitude_vector_0_1_0();
+    test_computing_magnitude_vector_0_0_1();
+    test_computing_magnitude_vector_1_2_3();
+    test_computing_magnitude_vector_n1_n2_n3();
 }
 
