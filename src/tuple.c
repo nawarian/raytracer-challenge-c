@@ -107,6 +107,15 @@ float vector_dot(tuple_t a, tuple_t b)
     ;
 }
 
+tuple_t vector_cross(tuple_t a, tuple_t b)
+{
+    return vector(
+        a.y * b.z - a.z * b.y,
+        a.z * b.x - a.x * b.z,
+        a.x * b.y - a.y * b.x
+    );
+}
+
 bool is_point(tuple_t tuple)
 {
     return fequal(tuple.w, 1);

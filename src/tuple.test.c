@@ -325,6 +325,23 @@ void test_dot_product_of_two_tuples(void)
     assert(fequal(vector_dot(a, b), 20));
 }
 
+/**
+ * Scenario: The cross product of two vectors
+ *
+ * Given a ← vector(1, 2, 3)
+ *   And b ← vector(2, 3, 4)
+ * Then cross(a, b) = vector(-1, 2, -1)
+ *   And cross(b, a) = vector(1, -2, 1)
+ */
+void test_cross_product_of_two_vectors(void)
+{
+    tuple_t a = vector(1, 2, 3);
+    tuple_t b = vector(2, 3, 4);
+
+    assert(tuple_equals(vector_cross(a, b), vector(-1, 2, -1)));
+    assert(tuple_equals(vector_cross(b, a), vector(1, -2, 1)));
+}
+
 int main(void)
 {
     test_tuple_with_w_1_is_a_point();
@@ -349,5 +366,6 @@ int main(void)
     test_normalizing_vector_1_2_3();
     test_magnitude_of_normalized_vector();
     test_dot_product_of_two_tuples();
+    test_cross_product_of_two_vectors();
 }
 
