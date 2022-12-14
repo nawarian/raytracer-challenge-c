@@ -45,6 +45,16 @@ tuple_t tuple_sub(tuple_t a, tuple_t b)
     };
 }
 
+tuple_t tuple_negate(tuple_t tuple)
+{
+    return (tuple_t) {
+        -tuple.x,
+        -tuple.y,
+        -tuple.z,
+        -tuple.w
+    };
+}
+
 bool is_point(tuple_t tuple)
 {
     return fequal(tuple.w, 1);

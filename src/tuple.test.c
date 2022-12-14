@@ -74,6 +74,21 @@ void test_subtracting_two_vectors(void)
     assert(tuple_equals(tuple_sub(v1, v2), vector(-2, -4 , -6)));
 }
 
+void test_subtracting_vector_from_zero_vector(void)
+{
+    tuple_t zero = vector(0, 0, 0);
+    tuple_t v = vector(1, -2, 3);
+
+    assert(tuple_equals(tuple_sub(zero, v), vector(-1, 2, -3)));
+}
+
+void test_negating_tuple(void)
+{
+    tuple_t a = tuple(1, -2, 3, -4);
+
+    assert(tuple_equals(tuple_negate(a), tuple(-1, 2, -3, 4)));
+}
+
 int main(void)
 {
     test_tuple_with_w_1_is_a_point();
@@ -84,5 +99,7 @@ int main(void)
     test_subtracting_two_points();
     test_subtracting_vector_from_point();
     test_subtracting_two_vectors();
+    test_subtracting_vector_from_zero_vector();
+    test_negating_tuple();
 }
 
