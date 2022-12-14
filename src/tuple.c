@@ -45,13 +45,13 @@ tuple_t tuple_sub(tuple_t a, tuple_t b)
     };
 }
 
-tuple_t tuple_mul(tuple_t a, float multiplier)
+tuple_t tuple_mul(tuple_t tuple, float multiplier)
 {
     return (tuple_t) {
-        a.x * multiplier,
-        a.y * multiplier,
-        a.z * multiplier,
-        a.w * multiplier
+        tuple.x * multiplier,
+        tuple.y * multiplier,
+        tuple.z * multiplier,
+        tuple.w * multiplier
     };
 }
 
