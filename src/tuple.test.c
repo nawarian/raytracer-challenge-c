@@ -28,9 +28,25 @@ void test_tuple_with_w_0_is_a_vector(void)
     assert(is_vector(a) == true);
 }
 
+void test_point_creates_tuples_with_w_1(void)
+{
+    tuple_t p = point(4, -4, 3);
+
+    assert(tuple_equals(p, tuple(4, -4, 3, 1)));
+}
+
+void test_vector_creates_tuples_with_w_0(void)
+{
+    tuple_t v = vector(4, -4, 3);
+
+    assert(tuple_equals(v, tuple(4, -4, 3, 0)));
+}
+
 int main(void)
 {
     test_tuple_with_w_1_is_a_point();
     test_tuple_with_w_0_is_a_vector();
+    test_point_creates_tuples_with_w_1();
+    test_vector_creates_tuples_with_w_0();
 }
 
