@@ -50,6 +50,30 @@ void test_adding_two_tuples(void)
     assert(tuple_equals(tuple_sum(a1, a2), tuple(1, 1, 6, 1)));
 }
 
+void test_subtracting_two_points(void)
+{
+    tuple_t p1 = point(3, 2, 1);
+    tuple_t p2 = point(5, 6, 7);
+
+    assert(tuple_equals(tuple_sub(p1, p2), vector(-2, -4, -6)));
+}
+
+void test_subtracting_vector_from_point(void)
+{
+    tuple_t p = point(3, 2, 1);
+    tuple_t v = vector(5, 6, 7);
+
+    assert(tuple_equals(tuple_sub(p, v), point(-2, -4, -6)));
+}
+
+void test_subtracting_two_vectors(void)
+{
+    tuple_t v1 = vector(3, 2, 1);
+    tuple_t v2 = vector(5, 6, 7);
+
+    assert(tuple_equals(tuple_sub(v1, v2), vector(-2, -4 , -6)));
+}
+
 int main(void)
 {
     test_tuple_with_w_1_is_a_point();
@@ -57,5 +81,8 @@ int main(void)
     test_point_creates_tuples_with_w_1();
     test_vector_creates_tuples_with_w_0();
     test_adding_two_tuples();
+    test_subtracting_two_points();
+    test_subtracting_vector_from_point();
+    test_subtracting_two_vectors();
 }
 

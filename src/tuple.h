@@ -15,6 +15,7 @@ tuple_t point(float x, float y, float z);
 tuple_t vector(float x, float y, float z);
 
 tuple_t tuple_sum(tuple_t a, tuple_t b);
+tuple_t tuple_sub(tuple_t a, tuple_t b);
 
 bool tuple_equals(tuple_t a, tuple_t b);
 bool is_point(tuple_t tuple);

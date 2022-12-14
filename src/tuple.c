@@ -35,6 +35,16 @@ tuple_t tuple_sum(tuple_t a, tuple_t b)
     };
 }
 
+tuple_t tuple_sub(tuple_t a, tuple_t b)
+{
+    return (tuple_t) {
+        a.x - b.x,
+        a.y - b.y,
+        a.z - b.z,
+        a.w - b.w
+    };
+}
+
 bool is_point(tuple_t tuple)
 {
     return fequal(tuple.w, 1);
