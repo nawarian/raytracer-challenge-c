@@ -22,6 +22,7 @@ tuple_t tuple_negate(tuple_t tuple);
 
 float vector_magnitude(tuple_t vector);
 tuple_t vector_normalize(tuple_t vector);
+float vector_dot(tuple_t a, tuple_t b);
 
 bool tuple_equals(tuple_t a, tuple_t b);
 bool is_point(tuple_t tuple);

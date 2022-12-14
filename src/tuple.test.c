@@ -310,6 +310,21 @@ void test_magnitude_of_normalized_vector(void)
     assert(fequal(vector_magnitude(norm), 1));
 }
 
+/**
+ * Scenario: The dot product of two tuples
+ *
+ * Given a ← vector(1, 2, 3)
+ *   And b ← vector(2, 3, 4)
+ * Then dot(a, b) = 20
+ */
+void test_dot_product_of_two_tuples(void)
+{
+    tuple_t a = vector(1, 2, 3);
+    tuple_t b = vector(2, 3, 4);
+
+    assert(fequal(vector_dot(a, b), 20));
+}
+
 int main(void)
 {
     test_tuple_with_w_1_is_a_point();
@@ -333,5 +348,6 @@ int main(void)
     test_normalizing_vector_4_0_0_gives_1_0_0();
     test_normalizing_vector_1_2_3();
     test_magnitude_of_normalized_vector();
+    test_dot_product_of_two_tuples();
 }
 

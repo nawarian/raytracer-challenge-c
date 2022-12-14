@@ -98,6 +98,15 @@ tuple_t vector_normalize(tuple_t vector)
     };
 }
 
+float vector_dot(tuple_t a, tuple_t b)
+{
+    return a.x * b.x
+        + a.y * b.y
+        + a.z * b.z
+        + a.w * b.w
+    ;
+}
+
 bool is_point(tuple_t tuple)
 {
     return fequal(tuple.w, 1);
