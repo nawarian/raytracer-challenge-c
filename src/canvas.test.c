@@ -1,4 +1,7 @@
 #include <assert.h>
+#include "canvas.h"
+#include "color.h"
+#include "tuple.h"
 
 /**
  * Scenario: Creating a canvas
@@ -10,6 +13,15 @@
  */
 void test_creating_canvas(void)
 {
+    canvas_t c = canvas(10, 20);
+    assert(c.width == 10);
+    assert(c.height == 20);
+
+    for (int i = 0; i < 10 * 20; ++i) {
+        assert(tuple_equals(c.pixels[i], color(0, 0, 0)));
+    }
+
+    canvas_destroy(c);
 }
 
 /**
@@ -22,6 +34,12 @@ void test_creating_canvas(void)
  */
 void test_writing_pixels_to_canvas(void)
 {
+    canvas_t c = canvas(10, 20);
+    color_t red = color(1, 0, 0);
+
+    canvas_write(c, 2, 3, red);
+
+    assert(tuple_equals(canvas_pixel(c, 2, 3), red));
 }
 
 /**
