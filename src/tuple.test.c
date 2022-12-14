@@ -269,6 +269,47 @@ void test_computing_magnitude_vector_n1_n2_n3(void)
     assert(fequal(vector_magnitude(v), sqrt(14)));
 }
 
+/**
+ * Scenario: Normalizing vector(4, 0, 0) gives (1, 0, 0)
+ *
+ * Given v ← vector(4, 0, 0)
+ * Then normalize(v) = vector(1, 0, 0)
+ */
+void test_normalizing_vector_4_0_0_gives_1_0_0(void)
+{
+    tuple_t v = vector(4, 0, 0);
+
+    assert(tuple_equals(vector_normalize(v), vector(1, 0, 0)));
+}
+
+/**
+ * Scenario: Normalizing vector(1, 2, 3)
+ *
+ * Given v ← vector(1, 2, 3) # vector(1/√14, 2/√14, 3/√14)
+ *  Then normalize(v) = approximately vector(0.26726, 0.53452, 0.80178)
+ */
+void test_normalizing_vector_1_2_3(void)
+{
+    tuple_t v = vector(1, 2, 3);
+
+    assert(tuple_equals(vector_normalize(v), vector(0.26726, 0.53452, 0.80178)));
+}
+
+/**
+ * Scenario: The magnitude of a normalized vector
+ *
+ * Given v ← vector(1, 2, 3)
+ * When norm ← normalize(v)
+ * Then magnitude(norm) = 1
+ */
+void test_magnitude_of_normalized_vector(void)
+{
+    tuple_t v = vector(1, 2, 3);
+    tuple_t norm = vector_normalize(v);
+
+    assert(fequal(vector_magnitude(norm), 1));
+}
+
 int main(void)
 {
     test_tuple_with_w_1_is_a_point();
@@ -289,5 +330,8 @@ int main(void)
     test_computing_magnitude_vector_0_0_1();
     test_computing_magnitude_vector_1_2_3();
     test_computing_magnitude_vector_n1_n2_n3();
+    test_normalizing_vector_4_0_0_gives_1_0_0();
+    test_normalizing_vector_1_2_3();
+    test_magnitude_of_normalized_vector();
 }
 

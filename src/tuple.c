@@ -86,6 +86,18 @@ float vector_magnitude(tuple_t vector)
     );
 }
 
+tuple_t vector_normalize(tuple_t vector)
+{
+    float magnitude = vector_magnitude(vector);
+
+    return (tuple_t) {
+        vector.x / magnitude,
+        vector.y / magnitude,
+        vector.z / magnitude,
+        vector.w / magnitude
+    };
+}
+
 bool is_point(tuple_t tuple)
 {
     return fequal(tuple.w, 1);
