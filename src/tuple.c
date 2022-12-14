@@ -55,6 +55,16 @@ tuple_t tuple_mul(tuple_t tuple, float multiplier)
     };
 }
 
+tuple_t tuple_div(tuple_t tuple, float factor)
+{
+    return (tuple_t) {
+        tuple.x / factor,
+        tuple.y / factor,
+        tuple.z / factor,
+        tuple.w / factor
+    };
+}
+
 tuple_t tuple_negate(tuple_t tuple)
 {
     return (tuple_t) {

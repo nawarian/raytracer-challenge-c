@@ -190,6 +190,19 @@ void test_multiplying_tuple_by_fraction(void)
     assert(tuple_equals(tuple_mul(a, 0.5), tuple(0.5, -1, 1.5, -2)));
 }
 
+/**
+ * Scenario: Dividing a tuple by a scalar
+ *
+ * Given a ← tuple(1, -2, 3, -4)
+ * Then a / 2 = tuple(0.5, -1, 1.5, -2)
+ */
+void test_dividing_tuple_by_scalar(void)
+{
+    tuple_t a = tuple(1, -2, 3, -4);
+
+    assert(tuple_equals(tuple_div(a, 2), tuple(0.5, -1, 1.5, -2)));
+}
+
 int main(void)
 {
     test_tuple_with_w_1_is_a_point();
@@ -204,5 +217,6 @@ int main(void)
     test_negating_tuple();
     test_multiplying_tuple_by_scalar();
     test_multiplying_tuple_by_fraction();
+    test_dividing_tuple_by_scalar();
 }
 

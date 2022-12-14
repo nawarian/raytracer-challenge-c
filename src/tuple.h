@@ -17,6 +17,7 @@ tuple_t vector(float x, float y, float z);
 tuple_t tuple_sum(tuple_t a, tuple_t b);
 tuple_t tuple_sub(tuple_t a, tuple_t b);
 tuple_t tuple_mul(tuple_t tuple, float multiplier);
+tuple_t tuple_div(tuple_t tuple, float factor);
 tuple_t tuple_negate(tuple_t tuple);
 
 bool tuple_equals(tuple_t a, tuple_t b);
