@@ -6,9 +6,13 @@ SRCDIR=src
 BUILDDIR=build
 
 OBJS=$(BUILDDIR)/tuple.o \
+	 $(BUILDDIR)/color.o \
+	 $(BUILDDIR)/canvas.o \
 	 $(BUILDDIR)/utils.o
 
-TOBJS=$(BUILDDIR)/tuple.test.o
+TOBJS=$(BUILDDIR)/tuple.test.o \
+	  $(BUILDDIR)/color.test.o \
+	  $(BUILDDIR)/canvas.test.o
 
 run: $(BUILDDIR) $(OBJS) $(TOBJS)
 	for test in $(TOBJS); do \

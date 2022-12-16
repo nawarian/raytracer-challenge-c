@@ -367,5 +367,7 @@ int main(void)
     test_magnitude_of_normalized_vector();
     test_dot_product_of_two_tuples();
     test_cross_product_of_two_vectors();
+
+    return 0;
 }
 
