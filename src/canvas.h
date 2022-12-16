@@ -11,6 +11,9 @@ typedef struct {
 
 canvas_t canvas(int width, int height);
 void canvas_destroy(canvas_t canvas);
+void canvas_write(canvas_t canvas, int x, int y, color_t color);
+color_t canvas_pixel_at(canvas_t canvas, int x, int y);
+unsigned char *canvas_to_ppm(canvas_t canvas);
 
 #endif
 
